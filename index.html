@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Памятка по ошибкам МПМ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --purple:#7c3aed;
+      --purple-dark:#5b21b6;
+      --border:#e9e3f2;
+      --text:#2f3038;
+      --muted:#64656f;
+      --soft:#faf8fd;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:#fff;color:var(--text);font-family:Inter,Arial,sans-serif}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 24px 24px}
+    h2{margin:0 0 10px;font-size:26px;line-height:1.25;font-weight:700}
+    .lead{margin:0 0 22px;color:var(--muted);font-size:16px;line-height:1.55}
+    .table-shell{
+      border:1px solid var(--border);
+      border-radius:16px;
+      overflow:hidden;
+      background:#fff;
+    }
+    table{width:100%;border-collapse:collapse;table-layout:fixed}
+    th{
+      background:var(--purple);
+      color:#fff;
+      padding:15px 18px;
+      text-align:left;
+      font-size:15px;
+      font-weight:700;
+    }
+    th:first-child,td:first-child{width:36%}
+    td{
+      padding:16px 18px;
+      border-top:1px solid var(--border);
+      vertical-align:top;
+      font-size:15px;
+      line-height:1.5;
+    }
+    td:first-child{
+      color:var(--purple-dark);
+      font-weight:700;
+      overflow-wrap:anywhere;
+    }
+    .actions{margin-top:18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .download{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      min-height:48px;
+      padding:12px 20px;
+      border-radius:12px;
+      background:var(--purple);
+      color:#fff;
+      text-decoration:none;
+      font-size:16px;
+      font-weight:700;
+      transition:.15s ease;
+    }
+    .download:hover{background:#6d28d9;transform:translateY(-1px)}
+    .download:focus-visible{outline:3px solid #d7c4ff;outline-offset:3px}
+    .hint{font-size:13px;line-height:1.45;color:#7a7881}
+    @media (max-width:640px){
+      .wrap{padding:20px 14px}
+      h2{font-size:22px}
+      .lead{font-size:15px}
+      .table-shell{border:0;overflow:visible}
+      table,tbody,tr,td{display:block;width:100%}
+      thead{display:none}
+      tr{
+        border:1px solid var(--border);
+        border-radius:13px;
+        overflow:hidden;
+        margin-bottom:10px;
+        background:#fff;
+      }
+      td{border:0;padding:11px 14px;font-size:14px}
+      td:first-child{width:100%;background:#f5f0ff}
+      .download{width:100%}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h2>Памятка по ошибкам МПМ</h2>
+    <p class="lead">Если нужно быстро вспомнить значение ошибки при проверке оплаты, воспользуйся таблицей.</p>
+
+    <div class="table-shell">
+      <table aria-label="Ошибки МПМ">
+        <thead>
+          <tr>
+            <th>Ошибка</th>
+            <th>Что означает</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>not enough money</td>
+            <td>Недостаточно средств — неуспешная попытка оплаты с Кошелька.</td>
+          </tr>
+          <tr>
+            <td>NotEnoughMoneyError</td>
+            <td>Недостаточно средств на карте. Пополните карту и повторите попытку.</td>
+          </tr>
+          <tr>
+            <td>DeclinedByEmitentError</td>
+            <td>Отказ банка, выпустившего карту.</td>
+          </tr>
+          <tr>
+            <td>bnpl payment unsuccess</td>
+            <td>Неуспешная попытка оформления рассрочки от стороннего банка.</td>
+          </tr>
+          <tr>
+            <td>bad request</td>
+            <td>Неуспешная попытка оформления оплаты частями.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="actions">
+      <a class="download"
+         href="./mpm-errors-guide.pdf"
+         download="Памятка_по_ошибкам_МПМ.pdf"
+         target="_blank"
+         rel="noopener">
+        ↓ Скачать памятку
+      </a>
+      <span class="hint">Если браузер не разрешит прямое скачивание, PDF откроется в новой вкладке.</span>
+    </div>
+  </main>
+</body>
+</html>
